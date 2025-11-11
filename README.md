@@ -57,4 +57,3 @@ node index.js
 }
 ```
 
-## Example output
