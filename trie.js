@@ -1,13 +1,13 @@
 // Class to represent a Trie (prefix tree) data structure
-
 class TrieNode {
     constructor() {
         this.children = {};
         this.isEndOfWord = false;
         this.frequency = 0; // To store frequency of the word ending at this node
-        this.word=null; // To store the complete word at the end node
+        this.word = null; // To store the complete word at the end node
     }
 }
+
 class Trie {
     constructor() {
         this.root = new TrieNode();
@@ -24,7 +24,7 @@ class Trie {
         }
         node.isEndOfWord = true;
         node.frequency += frequency; // Update frequency
-        node.word = word.toLowerCase() // Store the complete word
+        node.word = word.toLowerCase(); // Store the complete word
     }
 
     // Search for a word in the trie
@@ -51,7 +51,7 @@ class Trie {
     }
 
     // Get Auto-complete suggestions for a given prefix
-    getAutoCompleteSuggestions(prefix) {
+    getAutoCompleteSuggestions(prefix, topK = 5) {
         let node = this.root;
         for (let char of prefix.toLowerCase()) {
             if (!node.children[char]) {
@@ -62,10 +62,11 @@ class Trie {
         let words = this.getAllWords(node);
         // Sort words by frequency in descending order
         words.sort((a, b) => b.frequency - a.frequency);
-        return words;
+        // Return top K suggestions
+        return words.slice(0, topK);
     }
 
-    // Helper function to collect all worm a node
+    // Helper function to collect all words from a node
     collectAllWords(node, words) {
         if (node.isEndOfWord) {
             words.push({ word: node.word, frequency: node.frequency });
@@ -75,3 +76,5 @@ class Trie {
         }
     }
 }
+
+module.exports = { Trie, TrieNode };

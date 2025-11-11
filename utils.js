@@ -1,9 +1,9 @@
 //utils.js - A Utility function for spell checking
 
-// Calculate Lavenshtein Distance between two words
-export function levenshteinDistance(a, b) {
+// Calculate Levenshtein Distance between two words
+function levenshteinDistance(a, b) {
     const matrix = [];
-
+    
     // Initialize the matrix
     for (let i = 0; i <= b.length; i++) {
         matrix[i] = [i];
@@ -11,7 +11,7 @@ export function levenshteinDistance(a, b) {
     for (let j = 0; j <= a.length; j++) {
         matrix[0][j] = j;
     }
-
+    
     // Compute the distances
     for (let i = 1; i <= b.length; i++) {
         for (let j = 1; j <= a.length; j++) {
@@ -28,12 +28,12 @@ export function levenshteinDistance(a, b) {
             }
         }
     }
-
+    
     return matrix[b.length][a.length];
 }
 
-//Find spell check suggestions
-export function getSpellCheckSuggestions(word, dictionary, maxDistance = 2) {
+// Find spell check suggestions
+function getSpellCheckSuggestions(word, dictionary, maxDistance = 2) {
     const suggestions = [];
     for (let dictWord of dictionary) {
         const distance = levenshteinDistance(word.toLowerCase(), dictWord.toLowerCase());
@@ -41,7 +41,10 @@ export function getSpellCheckSuggestions(word, dictionary, maxDistance = 2) {
             suggestions.push({ word: dictWord, distance });
         }
     }
+    
     // Sort suggestions by distance
     suggestions.sort((a, b) => a.distance - b.distance);
     return suggestions.map(s => s.word);
 }
+
+module.exports = { levenshteinDistance, getSpellCheckSuggestions };
