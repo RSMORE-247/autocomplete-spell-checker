@@ -45,3 +45,5 @@ node index.js
     "spell_check_suggetions":["product","project"]
 }
 ```
+
+## Example output

@@ -39,20 +39,20 @@ const autoComplete = new AutoCompleteSpellCheck(sampleInput.dictionary);
 console.log('=== AUTOCOMPLETE & SPELL CHECKER DEMO ===\n');
 
 // Test Autocomplete
-console.log('📝 AUTOCOMPLETE TEST:');
+console.log('**** AUTOCOMPLETE TEST: ****');
 console.log('Prefix: "pro"');
 const autocompleteSuggestions = autoComplete.getAutoCompleteSuggestions('pro', 3);
 console.log('Top 3 Suggestions:', autocompleteSuggestions.map(s => `${s.word} (freq: ${s.frequency})`));
 console.log('');
 
 // Test Spell Check for each misspelled word
-console.log('🔍 SPELL CHECK TEST:');
+console.log('**** SPELL CHECK TEST: ****');
 for (let testWord of sampleInput.testWords) {
     const suggestions = autoComplete.getSpellCheckSuggestions(testWord, 2);
     console.log(`Misspelled: "${testWord}" → Suggestions: [${suggestions.join(', ')}]`);
 }
 
-console.log('\n✅ Tests completed successfully!');
+console.log('\n++++++++++++++ Tests completed successfully! ++++++++++++++');
 
 // Export for use in other modules
 module.exports = AutoCompleteSpellCheck;

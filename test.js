@@ -4,7 +4,7 @@ const { Trie } = require('./trie');
 const { SpellCheck } = require('./SpellCheck');
 const AutoCompleteSpellCheck = require('./index');
 
-console.log('🧪 Running Unit Tests...\n');
+console.log('Running Unit Tests...\n');
 
 let testsPassed = 0;
 let testsFailed = 0;
@@ -13,10 +13,10 @@ let testsFailed = 0;
 function runTest(testName, testFunction) {
     try {
         testFunction();
-        console.log(`✅ PASS: ${testName}`);
+        console.log(`PASS: ${testName}`);
         testsPassed++;
     } catch (error) {
-        console.log(`❌ FAIL: ${testName}`);
+        console.log(`FAIL: ${testName}`);
         console.log(`   Error: ${error.message}`);
         testsFailed++;
     }
@@ -114,14 +114,14 @@ runTest('No Match Found', () => {
 
 // Print summary
 console.log('\n' + '='.repeat(50));
-console.log(`📊 Test Summary:`);
+console.log(`  Test Summary:`);
 console.log(`   Passed: ${testsPassed}`);
 console.log(`   Failed: ${testsFailed}`);
 console.log(`   Total:  ${testsPassed + testsFailed}`);
 console.log('='.repeat(50));
 
 if (testsFailed === 0) {
-    console.log('\n🎉 All tests passed!');
+    console.log('\nAll tests passed!');
 } else {
-    console.log('\n⚠️  Some tests failed. Please review.');
+    console.log('\n Some tests failed. Please review.');
 }
