@@ -1,5 +1,16 @@
 # Intelligent Autocomplete and Spell Checker
 
+## Project Description
+A smart autocomplete and spell checking system built using **Tie data structure and **Levenshtein algorithm**.  which demonstarates efficient prfix matching and spelling correction.
+
+## How I USed GitHub Copilot
+## **For Code Generation**
+    -Typed comments describing the Trio data structure and Copilot generated the complete code/functions according to the details provided in the comments
+## **Algo Implementation**
+    -Wrote a comment "Calculate Levenshtein Distance between two words" and Copilot generated all the required methods such as insert,search etc
+## **Test Case Generation **
+    -added comments describing test scenarios, and Copipot generated test scripts.
+
 ## Features
 -**Autocomplete Functionality**
 -**Spell Checker**
