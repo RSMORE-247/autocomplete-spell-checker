@@ -37,9 +37,9 @@ node index.js
 {
 "dictionary":[
     {"word":"project","frequency":200},
-    {"word":"prompt","frequency":200},
-    {"word":"product","frequency":200},
-    {"word":"program","frequency":200}
+    {"word":"prompt","frequency":150},
+    {"word":"product","frequency":180},
+    {"word":"program","frequency":170}
     
 ]
 
